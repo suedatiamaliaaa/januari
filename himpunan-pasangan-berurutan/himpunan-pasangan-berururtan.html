@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himpunan Pasangan Berurutan</title>
+    <link rel="shortcut icon" href="../assets/images/logo_matematika.svg" type="image/icon" />
+    <link rel="stylesheet" href="../assets/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/dist/katex/katex.min.css">
+    <link rel="stylesheet" href="../assets/dist/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="../assets/dist/css/app.css">
+    <link rel="stylesheet" href="../assets/dist/css/style.css">
+
+    <script defer src="../assets/dist/katex/katex.min.js">
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js">
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [{
+                        left: '$$',
+                        right: '$$',
+                        display: true
+                    },
+                    {
+                        left: '$',
+                        right: '$',
+                        display: false
+                    },
+                    {
+                        left: '\\(',
+                        right: '\\)',
+                        display: false
+                    },
+                    {
+                        left: '\\[',
+                        right: '\\]',
+                        display: true
+                    }
+                ],
+                // • rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+    </script>
+
+    <style>
+        .capitalize {
+            text-transform: capitalize;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active" style="z-index: 1050;">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="../index.html"><img src="../assets/images/logo_matematika.svg" alt="Logo"
+                                    srcset="">
+                                <span style="font-size: 1.5rem"> Relasi dan Fungsi</span> </a> </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <!-- <li class="sidebar-item">
+                            <a href="relasidanfungsi_pendahuluan.html" class='sidebar-link' data-bs-toggle="modal"
+                                data-bs-target="#tujuanPembelajaran">
+                                <i class="bi bi-award"></i>
+                                <span>tujuan-pembelajaran</span>
+                            </a>
+                        </li> -->
+                        <li class="sidebar-item">
+                            <a href="../pendahuluan/relasidanfungsi_pendahuluan.html" class='sidebar-link'>
+                                <i class="bi bi-book"></i>
+                                <span>Pendahuluan</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-title">Relasi</li>
+
+
+
+                        <li class="sidebar-item">
+                            <a href="../pengertian-relasi/pengertian-relasi.html" class='sidebar-link'>
+                                <i class="bi bi-journal-richtext"></i>
+                                <span>Pengertian Relasi</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link '>
+                                <i class="bi bi-journal-richtext"></i>
+                                <span>Menyajikan Relasi</span>
+                            </a>
+                            <ul class="submenu show active">
+                                <li class="submenu-item">
+                                    <a href="../diagram-panah/diagram-panah.html">Diagram Panah</a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="../diagram-kartesius/diagram-kartesius.html">Diagram Kartesius</a>
+                                </li>
+                                <li class="submenu-item active">
+                                    <a href="himpunan-pasangan-berururtan.html">Himpunan Pasangan Berurutan</a>
+                                </li>
+
+
+                            </ul>
+
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="../ujikompetensi1/ujiKompetensi1_login.html" class='sidebar-link'>
+                                <i class="bi bi-pencil-fill"></i>
+                                <span>Uji Kompetensi 1</span>
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-title">Fungsi</li>
+                        <li class="sidebar-item">
+                            <a href="../pengertian-fungsi/pengertian-fungsi.html" class='sidebar-link'>
+                                <i class="bi bi-journal-richtext"></i>
+                                <span>Pengertian Fungsi</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="../banyak-fungsi-dari-dua-himpunan/banyak-fungsi-dari-dua-himpunan.html"
+                                class='sidebar-link'>
+                                <i class="bi bi-journal-richtext"></i>
+                                <span>Banyak Fungsi</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="../korespondensi -satu-satu/korespondensi-satu-satu.html" class='sidebar-link'>
+                                <i class="bi bi-journal-richtext"></i>
+                                <span>Korespondensi Satu-satu</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="../notasi-fungsi/notasi-fungsi.html" class='sidebar-link'>
+                                <i class="bi bi-journal-richtext"></i>
+                                <span>Notasi Fungsi</span>
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="../nilai-fungsi/nilai-fungsi.html" class='sidebar-link'>
+                                <i class="bi bi-journal-richtext"></i>
+                                <span>Nilai Fungsi</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="../nilai-fungsi/nilai-fungsi.html">Menghitung Nilai Suatu Fungsi</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="../menentukan-bentuk-fungsi/menentukan-bentuk-fungsi.html">Menentukan
+                                        Bentuk Fungsi</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="../grafik-fungsi/grafik-fungsi.html" class='sidebar-link'>
+                                <i class="bi bi-journal-richtext"></i>
+                                <span>Grafik Fungsi</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="../ujiKomp2/ujiKompetensi2Awal.html" class='sidebar-link'>
+                                <i class="bi bi-pencil-fill"></i>
+                                <span>Uji Kompetensi 2</span>
+                            </a>
+                        </li>
+                        <hr>
+
+                        <li class="sidebar-item">
+                            <a href="../evaluasi/evaluasi_login.html" class='sidebar-link'>
+                                <i class="bi bi-pencil-fill"></i>
+                                <span>Evaluasi</span>
+                            </a>
+                        </li>
+                        <!-- <hr> -->
+                        <!-- <li class="sidebar-item">
+                            <a href="../guru/guruLogin.html" class='sidebar-link'>
+                                <i class="bi bi-person"></i>
+                                <span>Halaman guru</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <div class="row">
+                <div class="card materi-shadow">
+                    <header class="mb-3">
+                        <a href="#" class="burger-btn d-block d-xl-none">
+                            <i class="bi bi-justify fs-3"></i>
+                        </a>
+                    </header>
+                    <div class="page-heading" style="background-color: #fff;">
+                        <h3 class="display-5 text-center pt-3">Menyajikan Relasi: <br> Himpunan Pasangan Berurutan</h3>
+                    </div>
+                    <div class="card-body">
+                        <a class="tujuan-pembelajaran" data-bs-toggle="collapse" href="#tujuanPembelajaran"
+                            role="button" aria-expanded="true" aria-controls="tujuanPembelajaran">
+                            <i class="bi bi-award"></i> Tujuan Pembelajaran
+                        </a>
+                        <div class="collapse shadow-sm show mt-1" id="tujuanPembelajaran">
+                            <div class="card card-body bg-light fs-5 border-0" style="background-color: #f4f5f9;">
+                                <!-- Setelah mempelajari materi dan menyelesaikan soal latihan, siswa
+                                    dapat: <br>  -->
+
+                                Siswa dapat melengkapi relasi dari dua himpunan dengan cara himpunan pasangan
+                                berurutan secara tepat.
+                            </div>
+                        </div>
+                    </div>
+
+                    <section id="diagramPanah">
+                        <div class="card-body">
+                            <p>
+                                Sebelumnya sudah dipelajari mengenai himpunan dengan menggunakan diagram panah dan
+                                diagram
+                                kartesius, sekarang kita akan mempelajari bagaimana menyatakan relasi dalam bentuk
+                                himpunan
+                                pasangan
+                                berurutan.
+
+                            </p>
+                            <div class="clearfix">
+
+                                <img src="../assets/images/il.svg" width="100%"
+                                    class="col-md-4 float-md-end mb-3 ms-md-3 rounded" alt="...">
+
+                                <p style="text-align: left; line-height: 2rem;">
+                                    Himpunan pasangan berurutan menyatakan bahwa setiap himpunan terdiri dari
+                                    anggota himpunan A dan
+                                    B
+                                    secara berurutan atau bisa dilambangkan $(x, y)$ dengan $x \in A$ dan $y \in B$.
+                                    Untuk memahami cara
+                                    menyatakan
+                                    himpunan pasangan berurutan perhatikan contoh berikut ini.
+
+                                </p>
+
+                                <p class="lh-lg">
+                                    <span class="fw-bold text-left">Contoh himpunan pasangan berurutan</span> <br>
+                                    Acil Idah menjual berbagai macam buah-buahan lokal yang ada di Kalimantan
+                                    Selatan, berikut ini
+                                    adalah
+                                    buah dan harga buah yang dijual acil Idah. <br>
+                                    <b>Harga setuyuk buah</b> rambai adalah $Rp9.500$.
+                                    <br>
+                                    <img src="../assets/images/buah_khas_kalsel.svg" width="100%"
+                                        class="col-md-4 float-md-end mb-3 ms-md-3 rounded" alt="...">
+                                    <b>Harga setuyuk buah</b> kasturi adalah $Rp10.000$. <br>
+                                    <b>Harga setuyuk buah</b> langsat adalah $Rp9.000$. <br>
+                                    <b>Harga setuyuk buah</b> ramania adalah $Rp6000$. <br>
+                                    <b>Harga setuyuk buah</b> kapul adalah $Rp8.500$.
+
+                                </p>
+
+                                <p>
+                                    Diketahui: <br>
+                                    $A = \{Nama \ buah \ khas \ Kalimantan \ Selatan\}$ <br>
+                                    $B = \{Harga \ buah \ dalam \ rupiah\}$
+                                </p>
+
+
+                                <p>Berdasarkan penjelasan tersebut maka terdapat relasi antara nama buah dan harga buah.
+                                    Sehingga himpunan pasangan berurutannya adalah
+                                    <img src="gambar/hpbs.svg" class="img-fluid">.</p>
+
+                                <p>Mari simak contoh soal himpunan pasangan berurutan di bawah ini.</p>
+
+                            </div>
+
+                            <!-- <div class="row">
+                                <div class="col-md-7">
+                                    <p>
+                                        Himpunan pasangan berurutan menyatakan bahwa setiap himpunan terdiri dari
+                                        anggota himpunan A dan
+                                        B
+                                        secara berurutan atau bisa dilambangkan $(x, y)$ dengan $x \in A$ dan $y \in B$.
+                                        Untuk memahami cara
+                                        menyatakan
+                                        himpunan pasangan berurutan perhatikan contoh berikut ini.
+
+                                    </p>
+                                    <p class="lh-lg">
+                                        <span class="fw-bold fs-4">Contoh himpunan pasangan berurutan</span> <br>
+                                        Acil Idah menjual berbagai macam buah-buahan lokal yang ada di Kalimantan
+                                        Selatan, berikut ini
+                                        adalah
+                                        buah dan harga buah yang dijual acil Idah. <br>
+                                        <b>Harga setuyuk buah</b> rambai adalah $Rp9.500$. <br>
+                                        <b>Harga setuyuk buah</b> kasturi adalah $Rp10.000$. <br>
+                                        <b>Harga setuyuk buah</b> langsat adalah $Rp9.000$. <br>
+                                        <b>Harga setuyuk buah</b> ramania adalah $Rp6000$. <br>
+                                        <b>Harga setuyuk buah</b> kapul adalah $Rp8.500$.</p>
+
+                                    <p>
+                                        Diketahui: <br>
+                                        <img src="gambar/himpunan_A.svg" alt="" class="matematika">
+                                        <br>
+                                        $B = \{Harga \ buah \ dalam \ rupiah\}$.
+                                    </p>
+                                    <p>Berdasarkan penjelasan tersebut maka terdapat relasi antara nama buah dan harga
+                                        buah.
+                                        Sehingga</p>
+                                    <p><img src="gambar/h_b.svg" width="90%" alt="" class="matematika"></p>
+                                    <p><img src="gambar/h_a.svg" width="70%" alt="" class="matematika"></p>
+                                    <p> Maka, himpunan pasangan berurutannya yaitu</p>
+
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="row pb-3">
+                                        <div class="col-md-12 text-center ">
+                                            <div class="card">
+                                                <img src="../assets/images/il.svg" class="rounded" width="100%"
+                                                    alt="...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="card">
+                                                <img src="../assets/images/buah_khas_kalsel.svg" class="rounded"
+                                                    width="100%" alt="...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p><img src="gambar/hpb.svg" width="90%" alt="" class="matematika">.</p> -->
+
+                            <!-- </div> -->
+                            <hr>
+
+                            <p class="fw-bold fs-4">Contoh soal</p>
+
+                            <p class="lh-lg">
+                                Diketahui <br>
+                                Himpunan $A=\{0,2,4,6,8\}$</span> <br>
+                                Himpunan $B=\{1,3,5,7,9,11\}$. <br>
+                                Maka, tentukan relasi <q><b>satu lebih dari</b></q> dalam
+                                bentuk himpunan pasangan berurutannya!
+                            </p>
+                            <p><img class="matematika" src="gambar/hpb_1.svg" width="45%" alt="">.</p>
+
+
+                            <details>
+                                <summary class="fw-bold fs-4">Tampilkan Pembahasan</summary>
+                                <p class="lh-lg">
+                                    Diketahui: <br>
+                                    $A=\{0, 2, 4, 6, 8\}$ <br>
+                                    $B=\{1, 3, 5, 7, 9, 11\}$ <br>
+                                    dengan relasi <q><b>satu lebih dari</b>.</q> Maka, <br>
+                                    <b>Satu lebih dari</b> 0 adalah 1. <br>
+                                    <b>Satu lebih dari</b> 2 adalah 3. <br>
+                                    <b>Satu lebih dari</b> 4 adalah 5. <br>
+                                    <b>Satu lebih dari</b> 6 adalah 7. <br>
+                                    <b>Satu lebih dari</b> 8 adalah 9. <br>
+                                    Sehingga, himpunan pasangan berurutannya adalah
+                                    <img class="matematika" src="gambar/CodeCogsEqn (1).svg" width="40%" alt="">.
+                                </p>
+                            </details>
+
+                    </section>
+
+                    <section id="latihanDiagramPanah">
+                        <div class="card card-body coba-materi">
+                            <h1 class="text-center latihan">Latihan soal</h1>
+                            <div class="card-body">
+                                <a class="petunjuk-pengerjaan" data-bs-toggle="collapse" href="#petunjukPengerjaan"
+                                    role="button" aria-expanded="true" aria-controls="petunjukPengerjaan">
+                                    <i class="bi bi-question-circle"></i> Petunjuk Pengerjaan
+                                </a>
+                                <div class="collapse shadow-sm show mt-1" id="petunjukPengerjaan">
+                                    <div class="card card-body fs-5 border-0" style="background-color: #f6f7f9">
+                                        <ol class="fs-5">
+                                            <li>Bacalah soal latihan secara teliti.</li>
+                                            <li>Lalu, isi jawaban pada kotak <input type="text" class="inputs "
+                                                    style="width: 5rem;" disabled placeholder=". . . ."></li>
+                                            <li>Untuk soal nomor 1 dan 2, tekan tombol <b>Cek jawaban</b> untuk mengecek
+                                                apakah jawaban sudah
+                                                benar atau belum.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="card border-0 pt-3">
+                                <div style="text-align:center">
+                                    <span class="tab-soal" onclick="tabSebelumnya(1)"><label
+                                            style="font-size: 25px;">1</label></span>
+                                    <span class="tab-soal" onclick="tabSebelumnya(2)"><label
+                                            style="font-size: 25px;">2</label></span>
+                                    <span class="tab-soal" onclick="tabSebelumnya(3)"><label
+                                            style="font-size: 25px;">3</label></span>
+                                    <span class="tab-soal" onclick="tabSebelumnya(4)"><label
+                                            style="font-size: 25px;">4</label></span>
+                                    <span class="tab-soal" onclick="tabSebelumnya(5)"><label
+                                            style="font-size: 25px;">5</label></span>
+                                </div>
+                            </div>
+
+                            <div class="nav-soal pt-2">
+                                <p class="lead">Soal 1</p>
+                                <!-- <p><i class="bi bi-patch-question text-info"></i> Petunjuk pengerjaan
+                                    <ol>
+                                        <li>Baca soal terlebih dahulu.</li>
+                                        <li>Lalu, isi jawaban pada kotak <input type="text" class="inputs "
+                                                style="width: 5rem;" disabled placeholder=". . . ."></li>
+                                        <li>Setelah selesai mengisi jawaban tekan tombol <b>Cek jawaban</b>.</li>
+                                        <li>Jika jawaban benar maka kotak jawaban akan berwarna </li>
+                                    </ol>
+                                </p> -->
+                                <p>Hasil penimbangan berat badan lima siswa dibulatkan sampai kg terdekat sebagai
+                                    berikut.</p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm text-center" style="width: 20rem;">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th scope="col">Nama siswa</th>
+                                                <th scope="col">Berat Badan $(kg)$</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fs-5">
+                                            <tr>
+                                                <td>Amir</td>
+                                                <td>48</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>Anisa</td>
+                                                <td>45</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Budi</td>
+                                                <td>50</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Suci</td>
+                                                <td>43</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Umi</td>
+                                                <td>40</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p>Diketahui $A= \{nama \ siswa\}$ dan $B=\{berat \ badan \ siswa \ dalam \
+                                    kg\}$</span>. <br>
+                                    Maka, tentukan himpunan pasangan berurutannya dengan mengisi titik-titik dibawah
+                                    ini!
+                                    <br>
+                                </p>
+                                <p style="display: inline-block;">Himpunan pasangan berurutan <br>
+                                    $\large R =\{($<input type="text" id="himpA1" class="inputs" placeholder=". . . .">,
+                                    <input type="text" id="himpB1" class="inputs" placeholder=". . . .">$\large )$,
+                                    $\large ($<input type="text" class="inputs" id="himpA2" placeholder=". . . .">,
+                                    <input type="text" id="himpB2" class="inputs" placeholder=". . . .">$\large )$,
+                                    $\large ($<input type="text" class="inputs" id="himpA3" placeholder=". . . .">,
+                                    <input type="text" id="himpB3" class="inputs" placeholder=". . . .">$\large )$,
+                                    $\large ($<input type="text" class="inputs" id="himpA4" placeholder=". . . .">,
+                                    <input type="text" id="himpB4" class="inputs" placeholder=". . . .">$\large )$,
+                                    $\large ($<input type="text" class="inputs" id="himpA5" placeholder=". . . .">,
+                                    <input type="text" id="himpB5" class="inputs" placeholder=". . . .">$\large )\}$
+                                    <br> <br>
+
+                                    <button class="btn btn-success" id="cekJawabanUser" onclick="cekHimpunan()">Cek
+                                        jawaban</button>
+                                    <button class="btn btn-warning sembunyikan" id="hapusJawaban"
+                                        onclick="hapus()">Hapus</button>
+                                    <!-- <hr> -->
+                                    <p id="keterangan"></p>
+
+                                </p>
+                                <!-- <p>Himpunan pasangan berurutan <br> = {(<input type="text" id="hp1" onchange="hpCek1()"
+                                        maxlength="4" class="inputs" placeholder=". . . ." />, <input type="number"
+                                        id="hp2" onchange="hpCek2()" min="1" max="50" class="inputan-angka1"
+                                        placeholder=". . . ." />), (<input type="text" id="hp3" class="inputs"
+                                        onchange="hpCek3()" maxlength="5" placeholder=". . . ." />, <input type="number"
+                                        id="hp4" class="inputan-angka1" min="1" max="50" onchange="hpCek4()"
+                                        placeholder=". . . ." />), (<input type="text" id="hp5" class="inputs"
+                                        onchange="hpCek5()" maxlength="4" placeholder=". . . ." />, <input type="number"
+                                        id="hp6" class="inputan-angka1" min="1" max="50" onchange="hpCek6()"
+                                        placeholder=". . . ." />), (<input type="text" id="hp7" class="inputs"
+                                        onchange="hpCek7()" maxlength="4" placeholder=". . . ." />, <input type="number"
+                                        id="hp8" class="inputan-angka1" onchange="hpCek8()" min="1" max="50"
+                                        placeholder=". . . ." />), (Umi, 40)}
+
+                                </p> -->
+                            </div>
+
+                            <div class="nav-soal">
+                                <p class="lead">Soal 2</p>
+                                <p class="lh-base" data-title="Washi tapes are the bomb!">Perhatikan relasi dalam
+                                    bentuk diagram panah
+                                    berikut ini yang menyatakan <q>Lebih dari</q> dari
+                                    himpunan $A$ ke himpunan $B$ berikut ini! <i class="icon-info"
+                                        data-title="Mini tours, admission fees, etc."></i></p>
+                                <div class="card border-0" style="width: 35%">
+                                    <img src="../assets/images/diagrampanah.svg" alt="" class="card-img-top" />
+                                </div>
+                                <p class="fs-5" style="text-align: left;">Maka himpunan pasangan berurutan untuk relasi
+                                    tersebut adalah <input type="text" onblur="this.value=removeSpaces(this.value);"
+                                        id="jaw1" class="inputs" style="width: 50%"
+                                        placeholder="{(..., ...), (..., ...), (..., ...), (...., ...), (..., ...), (..., ...)}">
+                                    <button class="btn btn-success" id="cekJawaban1" onclick="cekJawaban1()">Cek
+                                        jawaban</button>
+                                    <button class="btn btn-warning sembunyikan" id="hapusJawaban1"
+                                        onclick="hapus1()">Hapus</button>
+
+                                </p>
+                                <p id="keteranganPembahasanSoal2"></p>
+
+
+                                <!-- R = {(<input type="number" onchange="hpCek9()" min="1" max="5" id="hp9"
+                                        class="inputan-angka" placeholder=". . . ." />,
+                                    <input type="number" onchange="hpCek10()" min="1" max="5" id="hp10"
+                                        class="inputan-angka" placeholder=". . . ." />),
+                                    (<input type="number" onchange="hpCek11()" min="1" max="5" id="hp11"
+                                        class="inputan-angka" placeholder=". . . ." />,
+                                    <input type="number" onchange="hpCek12()" min="1" max="5" id="hp12"
+                                        class="inputan-angka" placeholder=". . . ." />),
+                                    (<input type="number" onchange="hpCek13()" min="1" max="5" id="hp13"
+                                        class="inputan-angka" placeholder=". . . ." />,
+                                    <input type="number" onchange="hpCek14()" min="1" max="5" id="hp14"
+                                        class="inputan-angka" placeholder=". . . ." />),
+                                    (<input type="number" onchange="hpCek15()" min="1" max="5" id="hp15"
+                                        class="inputan-angka" placeholder=". . . ." />,
+                                    <input type="number" onchange="hpCek16()" min="1" max="5" id="hp16"
+                                        class="inputan-angka" placeholder=". . . ." />),
+                                    (<input type="number" onchange="hpCek17()" min="1" max="5" id="hp17"
+                                        class="inputan-angka" placeholder=". . . ." />,
+                                    <input type="number" onchange="hpCek18()" min="1" max="5" id="hp18"
+                                        class="inputan-angka" placeholder=". . . ." />),
+                                    (3, 4)} -->
+
+                            </div>
+
+                            <div class="nav-soal">
+                                <p class="lead">Soal 3</p>
+
+                                <p class="lh-base">
+                                    Pengukuran tinggi badan lima siswa diperoleh hasil sebagai berikut. Tinggi badan
+                                    Bagus 152 cm.
+                                    Dina lebih pendek 2 cm daripada Bagus. Irwan tinggi 3 cm lebih tinggi dari Bagus.
+                                    Fahmi lebih tinggi
+                                    2 cm dari pada Irwan. Novi lebih tinggi 4 cm daripada Dina.
+                                </p>
+                                <p>Jika diketahui <span class="mtk"> <i>A</i> ={nama siswa}</span> dan <span
+                                        class="mtk"> <i>B</i>
+                                        ={Tinggi badan dalam cm}</span> dengan relasi <q><b>tinggi badan</b>.</q> Maka
+                                    isilah titik-titik di bawah ini.</p>
+
+                                <ul class="list-unstyled fs-5 lh-lg">
+                                    <li><b>Tinggi badan</b> Bagus adalah 152 cm</li>
+                                    <li class="pb-2"><b>Tinggi badan</b> Dina adalah <input type="number" id="hp21"
+                                            onchange="hpCek21()" min="1" class="inputs"
+                                            placeholder=". . . ." /><label>cm</label>
+                                    </li>
+                                    <li class="pb-2"><b>Tinggi badan </b> Irwan adalah <input type="number" min="1"
+                                            id="hp24" onchange="hpCek24()" class="inputs" placeholder=". . . ." />
+                                        <label>cm</label></li>
+                                    <li class="pb-2"><b>Tinggi badan</b> Fahmi adalah <input type="number" id="hp27"
+                                            onchange="hpCek27()" class="inputs"
+                                            placeholder=". . . ." /><label>cm</label></li>
+                                    <li><b>Tinggi badan </b> Novi adalah <input type="number" id="hp28"
+                                            onchange="hpCek28()" class="inputs"
+                                            placeholder=". . . ." /><label>cm</label></li>
+                                </ul>
+
+                                <p class="fs-5">Sehingga himpunan pasangan berurutan yang menyatakan relasi
+                                    <q><b>tinggi
+                                            badan</b></q>
+                                    adalah <br>
+                                    = {(<input id="hp_1" onchange="cekHp1()" type="text" class="inputs" maxlength="5"
+                                        placeholder=". . . .">, 152), (<input id="hp_2" onchange="cekHp2()" type="text"
+                                        class="inputs" maxlength="4" placeholder=". . . .">,
+                                    <input id="jawabHp2" type="number" class="inputs" readonly placeholder=". . . .">),
+                                    (<input id="hp_3" onchange="cekHp3()" type="text" maxlength="5" class="inputs"
+                                        placeholder=". . . .">,
+                                    <input id="jawabHp3" type="number" min="1" class="inputs" readonly
+                                        placeholder=". . . .">), (<input id="hp_4" onchange="cekHp4()" type="text"
+                                        maxlength="5" class="inputs" placeholder=". . . .">,
+                                    <input id="jawabHp4" type="number" min="1" class="inputs" readonly
+                                        placeholder=". . . .">),
+
+                                    (<input id="hp_5" onchange="cekHp5()" type="text" maxlength="4" class="inputs"
+                                        placeholder=". . . .">,
+                                    <input id="jawabHp5" type="number" min="1" class="inputs" readonly
+                                        placeholder=". . . .">)}
+                                </p>
+
+                            </div>
+                            <div class="nav-soal pt-3">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <p class="fs-4 lh-lg pt-3">Perhatikan diagram kartesius disamping ini yang
+                                            menyatakan
+                                            relasi dari
+                                            himpunan $A$
+                                            ke
+                                            himpunan $B$ untuk $x \in A$ dan $y \in B$.</p>
+
+                                        <p class="fs-4 lh-lg pt-3">Isilah titik-titik di bawah ini berdasarkan diagram
+                                            kartesius disamping
+                                            dalam bentuk himpunan
+                                            pasangan berurutan. </p>
+
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="card rounded border-0 text-center">
+                                            <div class="card-body">
+                                                <img src="../assets/images/222.svg" alt="" class="card-img-top"
+                                                    width="100%" /></div>
+                                        </div>
+                                    </div>
+                                    <p class="fs-4">Himpunan pasangan berurutan berdasarkan diagram kartesius di
+                                        atas adalah
+                                    </p>
+                                    <p>$\large = \{($<input type="number" min="1" max="8" id="hp_angka"
+                                            onchange="cekHpangka()" class="inputan-angka" placeholder=". . . .">,
+                                        <input type="number" class="inputan-angka" id="hp_angka1" placeholder=". . . ."
+                                            onchange="cekHpangka1()" min="1" max="8">$\large )$,
+                                        $\large ($<input id="hp_angka2" onchange="cekHpangka2()" type="number" min="1"
+                                            max="8" class="inputan-angka" placeholder=". . . .">,
+                                        <input id="hp_angka3" onchange="cekHpangka3()" type="number" min="1" max="8"
+                                            class="inputan-angka" placeholder=". . . .">$\large )$,
+
+                                        $\large ($<input id="hp_angka4" onchange="cekHpangka4()" type="number" min="1"
+                                            max="8" class="inputan-angka" placeholder=". . . .">,
+                                        <input id="hp_angka5" onchange="cekHpangka5()" type="number" min="1" max="8"
+                                            class="inputan-angka" placeholder=". . . .">$\large )$
+
+                                        $\large ($<input type="number" min="1" max="8" class="inputan-angka"
+                                            id="hp_angka6" onchange="cekHpangka6()" placeholder=". . . .">,
+                                        <input type="number" min="1" max="8" onchange="cekHpangka7()"
+                                            class="inputan-angka" id="hp_angka7" placeholder=". . . .">$\large )$,
+                                        $\large ($<input type="number" min="1" max="8" onchange="cekHpangka8()"
+                                            class="inputan-angka" id="hp_angka8" placeholder=". . . .">,<input
+                                            type="number" min="1" max="8" onchange="cekHpangka9()" class="inputan-angka"
+                                            id="hp_angka9" placeholder=". . . .">$\large )$, $\large ($<input
+                                            type="number" min="1" max="8" onchange="cekHpangka10()"
+                                            class="inputan-angka" id="hp_angka10" placeholder=". . . .">,
+                                        <input type="number" min="1" max="8" onchange="cekHpangka11()"
+                                            class="inputan-angka" id="hp_angka11" placeholder=". . . .">$\large )\}$
+
+
+
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="nav-soal">
+                                <p class="lead">Soal 5</p>
+                                <p class="fs-5">
+                                    <span class="fw-bold">Diketahui:</span> <br>
+                                    $\large A=\{2,4,6,8,10\}$ <br>
+                                    $\large B=\{1,2,3,4\}$</span> <br>
+                                    sehingga himpunan pasangan berurutan yang menyatakan <q><b>setangah dari</b></q>
+                                    adalah <br>$\large R = \{($<input type="number" min="1" max="8" id="hp_angka12"
+                                        onchange="cekHpangka12()" class="inputan-angka" placeholder=". . . .">,
+                                    <input type="number" onchange="cekHpangka13()" min="1" max="8" class="inputan-angka"
+                                        id="hp_angka13" placeholder=". . . .">$\large )$, $\large ($<input type="number"
+                                        min="1" max="8" onchange="cekHpangka14()" class="inputan-angka" id="hp_angka14"
+                                        placeholder=". . . .">, <input type="number" min="1" max="8"
+                                        onchange="cekHpangka15()" class="inputan-angka" id="hp_angka15"
+                                        placeholder=". . . .">$\large )$, $\large ($<input type="number" min="1" max="8"
+                                        onchange="cekHpangka16()" class="inputan-angka" id="hp_angka16"
+                                        placeholder=". . . .">, <input type="number" min="1" max="8"
+                                        onchange="cekHpangka17()" class="inputan-angka" id="hp_angka17"
+                                        placeholder=". . . .">$\large )$, $\large ($<input type="number" min="1" max="8"
+                                        onchange="cekHpangka18()" class="inputan-angka" id="hp_angka18"
+                                        placeholder=". . . .">,
+                                    <input type="number" min="1" max="8" onchange="cekHpangka19()" class="inputan-angka"
+                                        id="hp_angka19" placeholder=". . . .">$\large )\}$
+                                </p>
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- Button Prev dan Next -->
+                    <div class="card-body pt-2">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <a href="../diagram-kartesius/diagram-kartesius.html">
+                                <button class="btn btn-outline-secondary me-md-2" type="button"><i
+                                        class="bi bi-chevron-double-left"></i>Diagram Kartesius</button></a>
+                            <a href="../ujikompetensi1/ujiKompetensi1_login.html">
+                                <button class="btn btn-outline-primary" type="button">Uji Kompetensi 1<i
+                                        class="bi bi-chevron-double-right"></i></button></a>
+                        </div>
+                    </div>
+                    <button onclick="kembaliKeatas()" id="button-keatas" title="Ke atas">Top</button>
+                    <!-- Akhir button Prev, Next, Top -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // fungsi untuk button scroll ke atas
+
+        //ambil id button
+        var buttonKeatas = document.getElementById("button-keatas");
+
+        //lalu, ketika user scroll ke bawah sektar 30 px dari atas document maka tampilkan button
+        window.onscroll = function () {
+            fungsiScroll();
+        };
+
+        function fungsiScroll() {
+            if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+                buttonKeatas.style.display = "block";
+            } else {
+                buttonKeatas.style.display = "none";
+
+            }
+        }
+        //lalu ketika user klik button yang sudah tampil maka kembali ke atas
+        function kembaliKeatas() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        var tabIndex = 1;
+        tampilkanTab(tabIndex);
+
+        function tabSelanjutnya(n) {
+            tampilkanTab((tabIndex += n));
+        }
+
+        function tabSebelumnya(n) {
+            tampilkanTab((tabIndex = n));
+        }
+
+        function tampilkanTab(n) {
+            var i;
+            var navSoal = document.getElementsByClassName("nav-soal");
+            var tabSoal = document.getElementsByClassName("tab-soal");
+
+            if (n > navSoal.length) {
+                tabIndex = 1;
+            }
+            if (n < 1) {
+                tabIndex = navSoal.length;
+            }
+
+            for (i = 0; i < navSoal.length; i++) {
+                navSoal[i].style.display = "none";
+            }
+
+            for (i = 0; i < tabSoal.length; i++) {
+                tabSoal[i].className = tabSoal[i].className.replace(" active-tab", "");
+            }
+
+            navSoal[tabIndex - 1].style.display = "block";
+            tabSoal[tabIndex - 1].className += " active-tab";
+        }
+    </script>
+    <script src="himpunan-pasangan-berurutan.js"></script>
+    <script src="../assets/dist/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/dist/js/main.js"></script>
+</body>
+
+</html>
